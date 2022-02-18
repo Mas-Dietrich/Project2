@@ -1,0 +1,51 @@
+:root{
+    --royal-blue: #00539CFF;
+    --peach: #EEA47FFF;
+    --cherry-red: #990011ff;
+    --off-white: #FCF6F5FF;
+
+}
+* {
+    margin: 50;
+    padding: 40;
+}
+
+a {
+    text-decoration: none;
+    color: var(--peach);
+}
+
+#navbar {
+    display: flex;
+    justify-content: flex-end;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--royal-blue);
+}
+
+.navList a {
+    display: block;
+    font-size: 1.5rem;
+    padding: 1rem;
+}
+
+.navList a:hover{
+    background-color: var(--off-white);
+}
+
+#welcome-section{
+    background-color: var(--peach);
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+ul {
+    display: flex;
+    list-style-type: none;
+}
+

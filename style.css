@@ -83,6 +83,11 @@ a {
     color: var(--off-white);
 }
 
+#projects img{
+    border-radius: 25px;
+    border-style: solid;
+}
+
 .project-tiles{
     display: flex;
     flex-wrap: wrap;

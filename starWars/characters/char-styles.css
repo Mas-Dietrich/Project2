@@ -2,11 +2,17 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    
   }
   
+body {
+  background-image: url("/starWars/starWarsBackground.jpg")
+}
+
   main {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
   }
   
   figure {
@@ -16,17 +22,30 @@
   figure img {
     max-height: 20rem;
   }
+
+  img {
+    font-size: 2.4rem;
+    transition: transform 0.3s ease-out;
+  }
+  
+  img:hover {
+    transform: translateY(8px);
+  }
+
+  figcaption {
+    color: whitesmoke;
+    font-size: x-large;
+    text-align: center;
+  }
   
   button {
     width: 10rem;
-    height: 3rem;
+    height: 5rem;
     margin: 1rem;
-    background-color: blue;
-    color: aliceblue;
-    font-size: large;
+    border: solid black;
+    border-radius: 4px;
+    background-color: gold;
+    color: whitesmoke;
+    font-size: x-large;
   }
-
-
-
-
   /* Start https://www.cursors-4u.com */ * {cursor: url(https://cur.cursors-4u.net/others/oth-1/oth28.cur), auto !important;} /* End https://www.cursors-4u.com */

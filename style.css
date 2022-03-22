@@ -5,10 +5,10 @@ html{
 }
 
 :root{
-    --royal-blue: #00539CFF;
-    --peach: #EEA47FFF;
-    --cherry-red: #990011ff;
-    --off-white: #FCF6F5FF;
+    --navy: #2b6777;
+    --smoke-blue: #c8d8e4;
+    --white: #ffffff;
+    --greenish-blue: #52ab98;
 
 }
 * {
@@ -18,7 +18,7 @@ html{
 
 a {
     text-decoration: none;
-    color: var(--peach);
+    color: var(--smoke-blue);
 }
 
 #projects a{
@@ -32,7 +32,7 @@ a {
     top: 0;
     left: 0;
     width: 100%;
-    background-color: var(--cherry-red);
+    background-color: var(--white);
 }
 
 .navList a {
@@ -42,11 +42,11 @@ a {
 }
 
 .navList a:hover{
-    background-color: var(--off-white);
+    background-color: var(--greenish-blue);
 }
 
 #welcome-section{
-    background-color: var(--peach);
+    background-color: var(--smoke-blue);
     height: 100vh;
     width: 100%;
     display: flex;
@@ -68,7 +68,7 @@ a {
 }
 
 #projects{
-    background-color: var(--royal-blue);
+    background-color: var(--navy);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -80,7 +80,7 @@ a {
 
 #projects h1{
     text-decoration-line: underline;
-    color: var(--off-white);
+    color: var(--greenish-blue);
 }
 
 #projects img{
@@ -103,7 +103,7 @@ a {
   }
 
 #contact{
-    background-color: var(--peach);
+    background-color: var(--smoke-blue);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -139,7 +139,7 @@ figcaption{
     border-style: solid;
     border-radius: 40px;
     padding: 5px;
-    background-color: var(--off-white);
+    background-color: var(--greenish-blue);
 }
 h1 {
     font-size: 36px;
@@ -150,20 +150,20 @@ p {
 }
 
 #profile-link{
-    color: var(--cherry-red);
+    color: var(--white);
     font-size: 26px;
     padding: 15px;
     border-style: solid;
     border-radius: 40px;
-    background-color: var(--off-white);
+    background-color: var(--greenish-blue);
     margin: 10px;
 }
 
 footer{
     padding: 2rem;
     text-align: center;
-    background-color: var(--peach);
-    color: var(--off-white);
+    background-color: var(--smoke-blue);
+    color: var(--greenish-blue);
     font-size: 15px;
 }
 

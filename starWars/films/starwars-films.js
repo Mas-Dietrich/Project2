@@ -1,4 +1,4 @@
-import { films } from '../characters/data/films.js'
+import { films } from '../data/films.js'
 import { getLastNumber } from '../../utils/index.js'
 
 

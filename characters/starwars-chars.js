@@ -10,25 +10,31 @@ allCharsButton.addEventListener('click', function () {
   populateDOM(people)
 })
 
-const maleCharacters = people.filter(person => person.gender === 'male')  // elegant filter!
-
-/* const maleCharacters = people.filter((person) => {
-  console.log(person)
-  return person.gender === 'male'
-}) */
+const maleCharacters = people.filter(person => person.gender === 'male')
 
 // TODO: make a filter for female characters
+const femaleCharacters = people.filter(person => person.gender === 'female')
+
 // TODO: make a filter for other characters
+const otherCharacters = people.filter(person => person.gender != 'male' && person.gender != 'female')
 
 const maleCharsButton = document.createElement('button')
 maleCharsButton.textContent = 'Male Characters'
 maleCharsButton.addEventListener('click', () => populateDOM(maleCharacters))
 
 // TODO: create a female characters button and add it to the DOM
+const femaleCharsButton = document.createElement('button')
+femaleCharsButton.textContent = 'Female Characters'
+femaleCharsButton.addEventListener('click', () => populateDOM(femaleCharacters))
 // TODO: create a other characters button and add it to the DOM
+const otherCharsButton = document.createElement('button')
+otherCharsButton.textContent = 'Other Characters'
+otherCharsButton.addEventListener('click', () => populateDOM(otherCharacters))
 
 header.appendChild(allCharsButton)
 header.appendChild(maleCharsButton)
+header.appendChild(femaleCharsButton)
+header.appendChild(otherCharsButton)
 
 function populateDOM(characters) {
   // loop through all the characters and make figure elements and insert them into DOM

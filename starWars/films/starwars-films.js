@@ -1,5 +1,5 @@
-import { films } from '../data/films.js'
-import { getLastNumber } from '../utils/index.js'
+import { films } from '../characters/data/films.js'
+import { getLastNumber } from '../../utils/index.js'
 
 
 

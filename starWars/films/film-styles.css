@@ -4,10 +4,38 @@
     box-sizing: border-box;
 }
 h1 {
-    color: blue;
+    color: whitesmoke;
+    text-align: center;
+    background-color: black;
 }
 
+#filmList {
+    background-image: url("../starWarsBackground.jpg");
+    display: flex;
+    flex-direction:row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    color: whitesmoke;
+    text-align: center;
+    font-size: x-large;
+    
 
+}
+
+img {
+    border-color: gold;
+    border-style: solid;
+    border-radius: 4px;
+    transition: transform 0.3s ease-out;
+}
+
+img:hover {
+    transform: translateY(8px);
+  }
+
+figcaption {
+    background-color: black;
+}
 
 
 /* Start https://www.cursors-4u.com */ * {cursor: url(https://cur.cursors-4u.net/others/oth-1/oth28.cur), auto !important;} /* End https://www.cursors-4u.com */

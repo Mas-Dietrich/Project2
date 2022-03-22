@@ -2,25 +2,26 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
-main {
+  }
+  
+  main {
     display: flex;
     flex-wrap: wrap;
-}
-
-figure {
+  }
+  
+  figure {
     margin: .5rem;
-}
-
-figure img {
+  }
+  
+  figure img {
     max-height: 20rem;
-}
-
-button {
+  }
+  
+  button {
     width: 10rem;
     height: 3rem;
     margin: 1rem;
-    background-color: lightgray;
+    background-color: blue;
     color: aliceblue;
     font-size: large;
-}
+  }

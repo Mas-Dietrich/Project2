@@ -1,18 +1,28 @@
 import { planets } from '../data/planets.js'
+import { getLastNumber, removeChildren } from '../utils/index.js'
 
 const header= document.querySelector('header')
 const main = document.querySelector('main')
 
 const allPlanetsButton = document.createElement('button')
 allPlanetsButton.textContent = 'All Planets'
-allPlanetsButton.addEventListener('click', function (event) {
-    console.log('Thanks for clicking!',)
-    populateDOM()
+allPlanetsButton.addEventListener('click', function () {
+    populateDOM(planets)
 })
-header.appendChild(allPlanetsButton)
 
-function populateDOM() {
+const planetFilmsButton = document.createElement('button')
+planetFilmsButton.textContent = 'As Seen On'
+planetFilmsButton.addEventListener('click', () => populateDOM() )
+
+
+
+
+header.appendChild(allPlanetsButton)
+header.appendChild(planetFilmsButton)
+
+function populateDOM(planets) {
     //loop through all the planets and make figure elements and insert them into DOM
+    removeChildren(main)
     planets.forEach((planet) => { 
         const planetFig = document.createElement('figure')
         const planetImg = document.createElement('img')
@@ -30,7 +40,4 @@ function populateDOM() {
    
 }
 
-function getLastNumber(url) {
-    const secondToLastLetter = url[url.length - 2]
-    return secondToLastLetter
-}
+populateDOM(planets)

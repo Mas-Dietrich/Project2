@@ -52,11 +52,17 @@ figure {
     padding: 10px;
     margin: 10px;
     background: black;
+    transition: transform 0.3s ease-out;
+}
+
+figure:hover {
+    transform: translateY(8px);
 }
 
 figcaption {
     text-align: center;
     background: white;
+
 }
 
 footer {

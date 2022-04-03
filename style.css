@@ -35,6 +35,10 @@ a {
     background-color: var(--white);
 }
 
+.nav {
+    z-index: 999;
+}
+
 .navList a {
     display: block;
     font-size: 1.5rem;

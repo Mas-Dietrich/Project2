@@ -2,9 +2,66 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    background: url("../images/patrioticBackground.jpg")
+}
+
+header {
+    display: grid;
+    justify-content: center;
+    text-align: center;
+    
+}
+
+header h1{
+    border: solid black;
+    border-radius: 4px;
+    padding: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background: salmon;
+}
+
+header h3 {
+    border: solid black;
+    border-radius: 4px;
+    background: whitesmoke;
+    padding: 10px;
+}
+
+header ul {
+    border: solid black;
+    border-radius: 4px;
+    font-size: x-large;
+    margin: 15px;
+}
+
+header li {
+    background: lightblue;
+    list-style-type: none;
 }
 
 .senatorsDiv {
     display: flex;
+    justify-content: space-evenly;
     flex-wrap: wrap;
+}
+
+figure {
+    border: solid black;
+    border-radius: 4px;
+    padding: 10px;
+    margin: 10px;
+    background: black;
+}
+
+figcaption {
+    text-align: center;
+    background: white;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    color: gold;
 }

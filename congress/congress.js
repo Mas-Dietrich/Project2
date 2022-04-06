@@ -1,5 +1,7 @@
 import { senators } from '../starWars/data/senators.js'
-//import { representatives } from '/data/representatives.js'
+//import { representatives } from '..starWars/data/representatives.js'
+
+//const allCongressMembers = [...senators, ...representatives]
 
 const senatorsDiv = document.querySelector('.senatorsDiv')
 const seniorityHeading = document.querySelector('.seniority')
@@ -44,8 +46,15 @@ const mostSeniorMember = simplifiedSenators().reduce((acc, senator) => {
     return acc.seniority > senator.seniority ? acc : senator
 })
 
-seniorityHeading.textContent = `The most senior member of the senate is ${mostSeniorMember.name}`
+const biggestMissedVotesPct = simplifiedSenators().reduce((acc, senator) => acc.missedVotesPct > senator.missedVotesPct ? acc : senator)
 
+// console.log(biggestMissedVotesPct.missedVotesPct)
+
+const biggestVacationerList = simplifiedSenators().filter(senator => senator.missedVotesPct === biggestMissedVotesPct.missedVotesPct).map(senator => senator.name).join(' and ')
+
+// console.log(biggestVacationerList)
+
+seniorityHeading.textContent = `The most senior member of the senate is ${mostSeniorMember.name} and the biggest vacationers are ${biggestVacationerList}`
 
 simplifiedSenators().forEach(senator => {
     if(senator.loyaltyPct === 100) {
@@ -55,4 +64,12 @@ simplifiedSenators().forEach(senator => {
 
     }
 })
+
+// TODO suggestions for final project
+//Sorting by parting affiliations
+//More data with each congress member
+//ways to select members of the house of representatives
+//Add filter for oldest/youngest member
+//Add birthdate to the figcaptions of representatives
+
 

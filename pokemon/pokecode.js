@@ -90,7 +90,7 @@ const getAPIData = async (url) => {
     const pokeImg = document.createElement('img')
     if (pokemon.id > 9000) {
       // load local image
-      pokeImg.src = '../images/pokeball.png'
+      pokeImg.src = '../images/masterBall.png'
     } else {
       pokeImg.src = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemon.id}.png`
     }

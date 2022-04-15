@@ -119,3 +119,10 @@ const getAPIData = async (url) => {
   }
   
   loadPokemon(0, 25)
+
+
+  //page update ideas:
+  //buttons to load regions / gens of pokemon
+  //pokemon cries?
+  //make your own team?
+  // button to display my team

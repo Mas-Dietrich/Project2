@@ -10,6 +10,9 @@
   integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay"
   crossorigin="anonymous"
 />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
 <link
   href="https://fonts.googleapis.com/css?family=Poppins:200i,300,400&display=swap"
   rel="stylesheet"
@@ -18,6 +21,7 @@
         <title>Mason Dietrich's Personal Portfolio</title>
     </head>
     <body>
+        <main>
         <nav id="navbar" class="nav">
         <ul class="navList">
             <li>
@@ -32,12 +36,15 @@
         </ul>
         </nav>
         <section id="welcome-section" class="welcome-section">
-            <h1>I'm Mason Dietrich</h1>
-            <p>Welcome to my Personal Portfolio!</p>
+            <img src="/images/bg.jpg" id="bg">
+            <img src="/images/moon.png" id="moon">
+            <img src="/images/mountain.png" id="mountain">
+            <img src="/images/road.png" id="road">
+            <h1 id="intro-text">I'm Mason Dietrich, I'm studying software development and this is my portfolio</h1>
         </section>
 
         <section id="projects">
-            <h1>Check out my projects!</h1>
+            <h1>These are my projects!</h1>
             <div class="project-tiles">
             <a href="/starWars/films" class="project-details">
                 <figure class="project-tile">
@@ -92,5 +99,22 @@
             <h3>This is a practice portfolio done for DGM1600 at Utah Valley University. &copy;Mason Dietrich DGM1600</h3>
         </footer>
 
+        <script type="text/javascript">
+            let bg = document.getElementById("bg");
+            let moon = document.getElementById("moon");
+            let mountain = document.getElementById("mountain");
+            let road = document.getElementById("road");
+            let text = document.getElementById("intro-text");
+
+            window.addEventListener('scroll', function(){
+                var value = window.scrollY;
+
+                bg.style.top = value*0.5+'px';
+                moon.style.left = -value*0.5+'px';
+                mountain.style.top = -value*0.15+'px';
+                road.style.top = value * 0.15 + 'px';
+                text.style.top = value * 1 + 'px';
+            })
+        </script>
     </body>
 </html>

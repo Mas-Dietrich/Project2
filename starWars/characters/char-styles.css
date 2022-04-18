@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css/family=Roboto:300,400,500,700,900&display=swap')
 * {
     margin: 0;
     padding: 0;
@@ -7,6 +8,38 @@
   
 body {
   background-image: url("/starWars/starWarsBackground.jpg")
+}
+section {
+  position: relative;
+  display: flex;
+  font-family: 'Roboto', sans-serif;
+  font-style: italic;
+  position: relative;
+}
+
+section .text {
+  position: relative;
+  font-size: 3.25em;
+  color: white;
+  letter-spacing: 2px;
+}
+
+section .text span {
+  position: relative;
+  display: inline-block;
+  animation: animate 3s ease-in-out infinite;
+}
+
+@keyframes animate {
+  0% {
+    transform: translateY(0px);
+  }
+  25% {
+    transform: translateY(-50px);
+  }
+  50%, 100% {
+    transform: translateY(0px);
+  }
 }
 
   main {

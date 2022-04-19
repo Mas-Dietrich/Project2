@@ -6,6 +6,8 @@ const getAPIData = async (url) => {
       console.error(error)
     }
   }
+
+const loadedPokemon = []
   
   async function loadPokemon(offset = 0, limit = 25) {
     const pokeData = await getAPIData(
@@ -13,7 +15,17 @@ const getAPIData = async (url) => {
     )
     for (const nameAndUrl of pokeData.results) {
       const pokemon = await getAPIData(nameAndUrl.url)
-      populatePokeCard(pokemon)
+      const simplifiedPokemon = {
+        id: pokemon.id,
+        height: pokemon.height,
+        weight: pokemon.weight,
+        name: pokemon.name,
+        types: pokemon.types,
+        abilities: pokemon.abilities,
+        moves: pokemon.moves.slice(0,3)
+      }
+      loadedPokemon.push(simplifiedPokemon)
+      populatePokeCard(simplifiedPokemon)
     }
   }
   
@@ -87,6 +99,10 @@ const getAPIData = async (url) => {
   function populateCardFront(pokemon) {
     const pokeFront = document.createElement('figure')
     pokeFront.className = 'cardFace front'
+    const pokeType1 = pokemon.types[0].type.name
+    console.log(pokeType1)
+    console.log(getPokeTypeColor(pokeType1))
+    pokeFront.style.setProperty('background', getPokeTypeColor(pokeType1))
     const pokeImg = document.createElement('img')
     if (pokemon.id > 9000) {
       // load local image
@@ -117,8 +133,75 @@ const getAPIData = async (url) => {
     pokeBack.appendChild(abilityList)
     return pokeBack
   }
+
+  function getPokeTypeColor(pokeType) {
+    let color
+    switch (pokeType) {
+      case 'grass':
+        color = '#8BC560'
+        break
+      case 'fire':
+        color = '#F08030'
+        break
+      case 'water':
+        color = '#6890F0'
+        break
+      case 'bug':
+        color = '#A8B820'
+        break
+      case 'normal':
+        color = '#F5F5DC'
+        break
+      case 'fighting':
+        color = '#C03028'
+        break
+      case 'flying':
+        color = '#A890F0'
+        break
+      case 'poison':
+        color = '#A040A0'
+        break
+      case 'electric':
+        color = '#F8D030'
+        break
+      case 'psychic':
+        color = '#F85888'
+        break
+      case 'ground':
+        color = 'E0C068'
+        break
+      case 'rock':
+        color = '#B8A038'
+        break
+      case 'ghost':
+        color = '#705898'
+        break
+      case 'steel':
+        color = '#B8B8D0'
+        break
+      case 'ice':
+        color = '#98D8D8'
+        break
+      case 'dragon':
+        color = '#7038F8'
+        break
+      case 'dark':
+        color = '#705848'
+        break
+      case 'fairy':
+        color = '#EE99AC'
+        break
+      default:
+        color = '#888888'
+    }
+    return color
+  }
   
-  loadPokemon(0, 25)
+  await loadPokemon(0, 200)
+
+  function getPokemonByType(type) {
+    return loadedPokemon.filter((pokemon) => pokemon.types[0].type.name === type)
+  }
 
 
   //page update ideas:
@@ -126,3 +209,4 @@ const getAPIData = async (url) => {
   //pokemon cries?
   //make your own team?
   // button to display my team
+  //add pokemon moves to back of card under abilities

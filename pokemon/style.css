@@ -2,28 +2,36 @@
     margin: 0;
     box-sizing: border-box;
   }
+
+  body {
+    background: url('/images/pokeballBackground.png');
+
+  }
   
   .pokeGrid {
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
   }
   
   .scene {
   width: 200px;
   height: 260px;
-  margin: .5em;
+  margin: 1em;
   perspective: 600px;
+  text-transform: capitalize;
   }
   
   .card {
     width: 100%;
-    height: 100%;
+    height: 108%;
     cursor: pointer;
     transition: transform 1s;
     transform-style: preserve-3d;
     position: relative;
     border: solid blue;
-    border-radius: 4px;
+    border-radius: 14px;
   }
   
   
@@ -32,6 +40,17 @@
     height: 100%;
     position: absolute;
     backface-visibility: hidden;
+    padding: .5rem;
+    border-radius: 14px;
+  }
+
+  .cardFace header {
+    border: solid black;
+    background: lightblue;
+  }
+
+  .cardFace footer {
+    margin-bottom: 15px;
   }
   
   .card.is-flipped {
@@ -65,4 +84,51 @@
   
   figcaption {
     text-align: center;
+    text-transform: capitalize;
+    font-size: large;
+    text-decoration: underline;
+    letter-spacing: 3px;
+  }
+
+  header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    background-image: url('/images/PikachuBackground.jpg')
+  }
+
+  button {
+    color: white;
+    background: red;
+    border-radius: 50%;
+    height: 10vh;
+    text-transform: uppercase;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+  }
+
+  footer {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-style: italic;
+  }
+
+  label {
+    font-size: 1.5rem;
+    color: white;
+    padding: 15px;
+    margin-top: 10px;
+    margin-right: 5px;
+    height: 8vh;
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: underline;
+  }
+  select {
+    font-size: 1rem;
+    padding: 5px;
+    margin-top: 10px;
   }

@@ -39,7 +39,7 @@ const loadedPokemon = []
         this.types = types
     }
   }
-  
+    
   const newButton = document.createElement('button')
   newButton.textContent = 'New Pokemon'
   const header = document.querySelector('header')
@@ -112,9 +112,17 @@ const loadedPokemon = []
     }
     const pokeCaption = document.createElement('figcaption')
     pokeCaption.textContent = pokemon.name
-  
+
+    const pokeHeader = document.createElement('header')
+    pokeHeader.textContent = `Pokemon #${pokemon.id}`
+
+    const pokeFooter = document.createElement('footer')
+    pokeFooter.textContent = `The ${pokeType1} type Pokemon`
+    
+    pokeFront.appendChild(pokeHeader)
     pokeFront.appendChild(pokeImg)
     pokeFront.appendChild(pokeCaption)
+    pokeFront.appendChild(pokeFooter)
     return pokeFront
   }
   
@@ -168,7 +176,7 @@ const loadedPokemon = []
         color = '#F85888'
         break
       case 'ground':
-        color = 'E0C068'
+        color = '#E0C068'
         break
       case 'rock':
         color = '#B8A038'

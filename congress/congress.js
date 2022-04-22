@@ -1,7 +1,8 @@
 import { senators } from '../starWars/data/senators.js'
 import { representatives } from '../starWars/data/representatives.js'
+import { removeChildren } from '../utils/index.js'
 
-const allCongressMembers = [...senators, ...representatives]
+//const allCongressMembers = [...senators, ...representatives]
 
 const header = document.querySelector('header')
 
@@ -47,6 +48,7 @@ function simplifiedRepresentatives() {
 const simpleRepresentatives = simplifiedRepresentatives()
 const simpleSenators = simplifiedSenators()
 
+const allCongressMembers = [...senators, ...representatives]
 /*function populateSenatorDiv(senatorArray) {
     senatorArray.forEach(senator => {
         const senFigure = document.createElement('figure')
@@ -62,6 +64,7 @@ const simpleSenators = simplifiedSenators()
     })
 } */
 function populateCongressDiv(congressArray) {
+    removeChildren(congressDiv)
     congressArray.forEach(senator => {
         const senFigure = document.createElement('figure')
         const figImg = document.createElement('img')
@@ -117,13 +120,31 @@ allCongress.addEventListener('click', function() {
 })
 
 const maleSenators = allCongressMembers.filter(senators => senators.gender === 'M')
-const maleSenatorButton = document.createElement('button')
-maleSenatorButton.textContent = 'Male Senators'
-maleSenatorButton.addEventListener('click', () => populateCongressDiv(maleSenators))
+const maleSenatorsButton = document.createElement('button')
+maleSenatorsButton.textContent = 'Male Senators'
+maleSenatorsButton.addEventListener('click', () => populateCongressDiv(maleSenators))
+
+const femaleSenators = allCongressMembers.filter(senators => senators.gender === 'F')
+const femaleSenatorsButton = document.createElement('button')
+femaleSenatorsButton.textContent = 'Female Senators'
+femaleSenatorsButton.addEventListener('click', () => populateCongressDiv(femaleSenators))
+
+const maleRepresentatives = allCongressMembers.filter(representatives => representatives.gender === 'M')
+const maleRepresentativesButton = document.createElement('button')
+maleRepresentativesButton.textContent = 'Male Representatives'
+maleRepresentativesButton.addEventListener('click', () => populateCongressDiv(maleRepresentatives))
+
+const femaleRepresentatives = allCongressMembers.filter(representatives => representatives.gender === 'F')
+const femaleRepresentativesButton = document.createElement('button')
+femaleRepresentativesButton.textContent = 'Female Representatives'
+femaleRepresentativesButton.addEventListener('click', () => populateCongressDiv(femaleRepresentatives))
+
 
 header.appendChild(allCongress)
-header.appendChild(maleSenatorButton)
-
+header.appendChild(maleSenatorsButton)
+header.appendChild(femaleSenatorsButton)
+header.appendChild(maleRepresentativesButton)
+header.appendChild(femaleRepresentativesButton)
 
 //Buttons to get senators or representatives, male, or female
 

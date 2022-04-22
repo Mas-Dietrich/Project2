@@ -2,7 +2,7 @@ import { senators } from '../starWars/data/senators.js'
 import { representatives } from '../starWars/data/representatives.js'
 import { removeChildren } from '../utils/index.js'
 
-//const allCongressMembers = [...senators, ...representatives]
+const allCongressMembers = [...senators, ...representatives]
 
 const header = document.querySelector('header')
 
@@ -48,21 +48,9 @@ function simplifiedRepresentatives() {
 const simpleRepresentatives = simplifiedRepresentatives()
 const simpleSenators = simplifiedSenators()
 
-const allCongressMembers = [...senators, ...representatives]
-/*function populateSenatorDiv(senatorArray) {
-    senatorArray.forEach(senator => {
-        const senFigure = document.createElement('figure')
-        const figImg = document.createElement('img')
-        const figCaption = document.createElement('figcaption')
+const allSimplifiedCongress = [...simpleSenators, ...simpleRepresentatives]
 
-        figImg.src = senator.imgURL
-        figCaption.textContent = `${senator.name} born ${senator.birthday}`
 
-        senFigure.appendChild(figImg)
-        senFigure.appendChild(figCaption)
-        senatorsDiv.appendChild(senFigure)
-    })
-} */
 function populateCongressDiv(congressArray) {
     removeChildren(congressDiv)
     congressArray.forEach(senator => {
@@ -90,8 +78,7 @@ function populateCongressDiv(congressArray) {
     })
 }
 
-populateCongressDiv(simpleSenators);
-populateCongressDiv(simpleRepresentatives);
+populateCongressDiv(allSimplifiedCongress);
 
 const mostSeniorMember = simplifiedSenators().reduce((acc, senator) => {
     return acc.seniority > senator.seniority ? acc : senator
@@ -102,7 +89,7 @@ const biggestMissedVotesPct = simplifiedSenators().reduce((acc, senator) => acc.
 const biggestVacationerList = simplifiedSenators().filter(senator => senator.missedVotesPct === biggestMissedVotesPct.missedVotesPct).map(senator => senator.name).join(' and ')
 
 
-seniorityHeading.textContent = `The most senior member of the senate is ${mostSeniorMember.name} and the biggest vacationers are ${biggestVacationerList}`
+seniorityHeading.textContent = `The most senior senator is ${mostSeniorMember.name} and the biggest vacationers are ${biggestVacationerList}`
 
 simplifiedSenators().forEach(senator => {
     if(senator.loyaltyPct === 100) {
@@ -116,40 +103,49 @@ simplifiedSenators().forEach(senator => {
 const allCongress = document.createElement('button')
 allCongress.textContent = 'All Congress'
 allCongress.addEventListener('click', function() {
-    populateCongressDiv(simpleSenators)
+    populateCongressDiv(allSimplifiedCongress)
 })
 
-const maleSenators = allCongressMembers.filter(senators => senators.gender === 'M')
+const allSenators = document.createElement('button')
+allSenators.textContent = 'All Senators'
+allSenators.addEventListener('click', () => populateCongressDiv(simpleSenators))
+
+const allRepresentatives = document.createElement('button')
+allRepresentatives.textContent = 'All Representatives'
+allRepresentatives.addEventListener('click', () => populateCongressDiv(simpleRepresentatives))
+
+const maleSenators = simpleSenators.filter(senators => senators.gender === 'M')
 const maleSenatorsButton = document.createElement('button')
 maleSenatorsButton.textContent = 'Male Senators'
 maleSenatorsButton.addEventListener('click', () => populateCongressDiv(maleSenators))
 
-const femaleSenators = allCongressMembers.filter(senators => senators.gender === 'F')
+const femaleSenators = simpleSenators.filter(senators => senators.gender === 'F')
 const femaleSenatorsButton = document.createElement('button')
 femaleSenatorsButton.textContent = 'Female Senators'
 femaleSenatorsButton.addEventListener('click', () => populateCongressDiv(femaleSenators))
 
-const maleRepresentatives = allCongressMembers.filter(representatives => representatives.gender === 'M')
+const maleRepresentatives = simpleRepresentatives.filter(representatives => representatives.gender === 'M')
 const maleRepresentativesButton = document.createElement('button')
 maleRepresentativesButton.textContent = 'Male Representatives'
 maleRepresentativesButton.addEventListener('click', () => populateCongressDiv(maleRepresentatives))
 
-const femaleRepresentatives = allCongressMembers.filter(representatives => representatives.gender === 'F')
+const femaleRepresentatives = simpleRepresentatives.filter(representatives => representatives.gender === 'F')
 const femaleRepresentativesButton = document.createElement('button')
 femaleRepresentativesButton.textContent = 'Female Representatives'
 femaleRepresentativesButton.addEventListener('click', () => populateCongressDiv(femaleRepresentatives))
 
 
 header.appendChild(allCongress)
+header.appendChild(allSenators)
+header.appendChild(allRepresentatives)
 header.appendChild(maleSenatorsButton)
 header.appendChild(femaleSenatorsButton)
 header.appendChild(maleRepresentativesButton)
 header.appendChild(femaleRepresentativesButton)
 
-//Buttons to get senators or representatives, male, or female
 
-// TODO suggestions for final project
-//Sorting by parting affiliations
+// TODO suggestions for final project:
+//Replace list of senator's and their loyalty percentage with a did you know section involving more data use
 //More data with each congress member
 //Add filter for oldest/youngest member
 

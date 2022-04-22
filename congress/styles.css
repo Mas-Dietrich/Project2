@@ -2,6 +2,9 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+body {
     background: url("../images/patrioticBackground.jpg")
 }
 
@@ -10,6 +13,17 @@ header {
     justify-content: center;
     text-align: center;
     
+}
+
+button {
+    background: lightblue;
+    color: black;
+    border: solid black;
+    border-radius: 4px;
+    padding: 10px;
+    font-size: large;
+    margin: 5px;
+    cursor: pointer;
 }
 
 header h1{
@@ -38,6 +52,7 @@ header ul {
 header li {
     background: lightblue;
     list-style-type: none;
+    border-radius: 4px;
 }
 
 .congressDiv {
@@ -47,12 +62,13 @@ header li {
 }
 
 figure {
-    border: solid black;
-    border-radius: 4px;
     padding: 10px;
     margin: 10px;
-    background: black;
     transition: transform 0.3s ease-out;
+    justify-content: center;
+    align-items: center;
+    border: solid black;
+    background: black;
 }
 
 figure:hover {
@@ -62,7 +78,12 @@ figure:hover {
 figcaption {
     text-align: center;
     background: white;
-
+    justify-content: center;
+    align-items: center;
+    font-size: small;
+    flex-wrap: wrap;
+    font-weight: bold;
+    width: 100%;
 }
 
 footer {

@@ -40,7 +40,7 @@ header li {
     list-style-type: none;
 }
 
-.senatorsDiv {
+.congressDiv {
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;

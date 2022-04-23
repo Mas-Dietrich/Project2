@@ -138,7 +138,17 @@ const loadedPokemon = []
       listItem.textContent = abilityItem.ability.name
       abilityList.appendChild(listItem)
     })
+
     pokeBack.appendChild(abilityList)
+    const heightAndWeight = document.createElement('h4')
+    heightAndWeight.textContent = `${pokemon.name}'s height and weight`
+    pokeBack.appendChild(heightAndWeight)
+    const heightStat = document.createElement('p')
+    const weightStat = document.createElement('p')
+    heightStat.textContent = `Height: ${pokemon.height}`
+    weightStat.textContent = `Weight: ${pokemon.weight}`
+    heightAndWeight.appendChild(heightStat)
+    heightAndWeight.appendChild(weightStat)
     return pokeBack
   }
 

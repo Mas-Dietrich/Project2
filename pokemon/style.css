@@ -113,7 +113,7 @@
     color: black;
     font-weight: bold;
     background-color: red;
-    background-image: linear-gradient(red 50%, white 50%);
+    background-image: linear-gradient(red 55%, white 50%);
     border-radius: 50%;
     height: 10vh;
     text-transform: uppercase;

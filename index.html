@@ -44,7 +44,7 @@
         </section>
 
         <section id="projects">
-            <h1>These are my projects!</h1>
+            <h1 class="text">These are my projects!</h1>
             <div class="project-tiles">
             <a href="/starWars/films" class="project-details">
                 <figure class="project-tile">
@@ -119,6 +119,14 @@
                 road.style.top = value * 0.15 + 'px';
                 text.style.top = value * 1 + 'px';
             })
+
+            const fancytext = document.querySelector('.text');
+            fancytext.innerHTML = fancytext.textContent.replace(/\S/g, "<span>$&</span>");
+
+            const element = document.querySelectorAll('span');
+            for (let i=0; i<element.length; i++){
+                element[i].style.animationDelay = i*0.07 + 's';
+            }
         </script>
     </body>
 </html>

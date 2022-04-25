@@ -122,7 +122,6 @@ a {
 }
 
 #projects h1{
-    text-decoration-line: underline;
     color: var(--greenish-blue);
 }
 
@@ -313,3 +312,16 @@ figure {
     }
 }
 
+section .text {
+    position: relative;
+    font-size: 3.25em;
+    color: white;
+    letter-spacing: 2px;
+  }
+  
+  section .text span {
+    position: relative;
+    display: inline-block;
+    animation: animate 3s ease-in-out infinite;
+  }
+  

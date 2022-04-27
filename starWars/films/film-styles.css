@@ -7,6 +7,8 @@ h1 {
     color: whitesmoke;
     text-align: center;
     background-color: black;
+    padding: 25px;
+    font-family: 'Kanit', sans-serif;
 }
 
 #filmList {
@@ -35,6 +37,13 @@ img:hover {
 
 figcaption {
     background-color: black;
+    font-family: 'Bebas Neue', cursive;
+    font-style: italic;
+}
+p {
+    justify-content: center;
+    align-items: center;
+
 }
 
 

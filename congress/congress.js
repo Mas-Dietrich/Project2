@@ -91,14 +91,14 @@ const biggestVacationerList = simplifiedSenators().filter(senator => senator.mis
 
 seniorityHeading.textContent = `The most senior senator is ${mostSeniorMember.name} and the biggest vacationers are ${biggestVacationerList}`
 
-simplifiedSenators().forEach(senator => {
+/*simplifiedSenators().forEach(senator => {
     if(senator.loyaltyPct === 100) {
         let listItem = document.createElement('li')
         listItem.textContent = senator.name
         loyaltyList.appendChild(listItem)
 
     }
-})
+})*/
 
 const allCongress = document.createElement('button')
 allCongress.textContent = 'All Congress'

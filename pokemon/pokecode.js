@@ -42,14 +42,17 @@ const loadedPokemon = []
     }
   }
 
-  const loadHeader = document.querySelector('header')
+const loadHeader = document.querySelector('header')
 const loadButton = document.createElement('button')
+const introText = document.createElement('h1')
+introText.textContent = 'Welcome to the Pokemon Project'
 loadButton.textContent = 'Load Pokemon'
 loadHeader.appendChild(loadButton)
+loadHeader.appendChild(introText)
 loadButton.addEventListener('click', async () => {
   if (loadedPokemon.length === 0) {
     removeChildren(pokeGrid)
-    await loadPokemon(0, 250)
+    await loadPokemon(0, 25)
   }
 })
     
@@ -234,21 +237,21 @@ loadButton.addEventListener('click', async () => {
   }
 
   const typeSelector = document.querySelector('#type-select')
-typeSelector.addEventListener('change', (event) => {
-  removeChildren(pokeGrid) // cleared out the grid from all pokemon
-  const usersTypeChoice = event.target.value.toLowerCase()
-  if (event.target.value === 'Show All Pokemon') {
-    loadedPokemon.forEach((singleLoadedPokemon) =>
-      populatePokeCard(singleLoadedPokemon),
-    )
-  } else {
-    const pokemonByType = getPokemonByType(usersTypeChoice)
+  typeSelector.addEventListener('change', (event) => {
+    removeChildren(pokeGrid) // cleared out the grid from all pokemon
+    const usersTypeChoice = event.target.value.toLowerCase()
+    if (event.target.value === '--Choose your Pokemon--') {
+      loadedPokemon.forEach((singleLoadedPokemon) =>
+        populatePokeCard(singleLoadedPokemon),
+      )
+    } else {
+      const pokemonByType = getPokemonByType(usersTypeChoice)
     // now just loop through the filtered array and populate
-    pokemonByType.forEach((eachSinglePokemon) =>
-      populatePokeCard(eachSinglePokemon),
-    )
-  }
-})
+      pokemonByType.forEach((eachSinglePokemon) =>
+        populatePokeCard(eachSinglePokemon),
+      )
+    }
+  })
 
 
   //page update ideas:

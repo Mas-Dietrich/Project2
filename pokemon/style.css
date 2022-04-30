@@ -4,7 +4,9 @@
   }
 
   body {
-    background: url('/images/pokeballBackground.png');
+    background: linear-gradient(-45deg, #1f1f1f12, #F34D23, #191C22);
+    position: relative;
+    animation: change 10s ease-in-out;
 
   }
   
@@ -42,6 +44,9 @@
     backface-visibility: hidden;
     padding: .5rem;
     border-radius: 14px;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
   }
 
   .cardFace header {
@@ -106,7 +111,15 @@
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    background-image: url('/images/PikachuBackground.jpg')
+    background-image: rgb(243, 77, 35);
+  }
+
+  header h1 {
+    font-family: 'Varela Round', sans-serif;
+    border: solid 3px #fff;
+    padding: 25px;
+    margin: 10px;
+    color: #fff;
   }
 
   button {
@@ -114,13 +127,12 @@
     font-weight: bold;
     background-color: red;
     background-image: linear-gradient(red 55%, white 50%);
-    border-radius: 50%;
-    height: 10vh;
+    border-radius: 45%;
+    height: 11vh;
     text-transform: uppercase;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    justify-content: center;
   }
 
   footer {

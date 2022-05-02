@@ -157,7 +157,7 @@ loadButton.addEventListener('click', async () => {
 
     pokeBack.appendChild(abilityList)
     const heightAndWeight = document.createElement('h4')
-    heightAndWeight.textContent = `${pokemon.name}'s height and weight`
+    heightAndWeight.textContent = `${pokemon.name} height and weight`
     pokeBack.appendChild(heightAndWeight)
     const heightStat = document.createElement('p')
     const weightStat = document.createElement('p')

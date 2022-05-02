@@ -4,6 +4,10 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
   <link rel="stylesheet" href="char-styles.css"/>
   <title>Star Wars Characters</title>
 </head>
@@ -11,12 +15,22 @@
   <section>
   <h1 class="text">The characters of Star Wars</h1>
   </section>
-  <header>
+  <header class="header">
+    <audio id="sabre" preload="auto">
+      <source src="../sw4lightsabre.mp3">
+    </audio>
     
   </header>
   <main>
 
   </main>
+  <script>
+    var lightSabre = $("#sabre")[0];
+    $(".header")
+    .mouseover(function() {
+      lightSabre.play();
+    });
+  </script>
   <script src="starwars-chars.js" type="module"></script>
 </body>
 </html>

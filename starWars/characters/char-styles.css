@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css/family=Roboto:300,400,500,700,900&display=swap')
+@import url('https://fonts.googleapis.com/css/family=Roboto:300,400,500,700,900&display=swap');
 * {
     margin: 0;
     padding: 0;
@@ -28,6 +28,10 @@ section .text span {
   position: relative;
   display: inline-block;
   animation: animate 3s ease-in-out infinite;
+}
+
+.text {
+  margin-top: 50px;
 }
 
 @keyframes animate {
@@ -69,16 +73,33 @@ section .text span {
     color: whitesmoke;
     font-size: x-large;
     text-align: center;
+    font-family: "Anton", sans-serif;
   }
   
+  button:hover {
+    box-shadow: inset 300px 0 0 0 skyblue;
+    cursor: pointer;
+    color: #000;
+  }
+
   button {
-    width: 10rem;
-    height: 5rem;
-    margin: 1rem;
-    border: solid black;
+    font-family: "Anton", sans-serif;
+    width: 300px;
+    padding: 10px;
+    margin: 16px;
+    height: 100px;
+    border: none;
     border-radius: 4px;
-    background-color: gold;
-    color: whitesmoke;
-    font-size: x-large;
+    transition: ease-out 0.7s;
+    font-size: 2rem;
+    outline: none;
+    border: 3px solid skyblue;
+    background: gold;
+  }
+
+  button:before {
+    transition: 0.5s all ease;
+    opacity: 0;
+    content: '';
   }
   /* Start https://www.cursors-4u.com */ * {cursor: url(https://cur.cursors-4u.net/others/oth-1/oth28.cur), auto !important;} /* End https://www.cursors-4u.com */
